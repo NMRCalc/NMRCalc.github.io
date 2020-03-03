@@ -1,0 +1,30 @@
+.modelImg {
+    height: 300px;
+}
+
+.chooseModel {   
+    margin-top: 125px;
+    
+ }
+
+.row {
+    
+    margin: 0 auto;
+    
+    
+}
+
+.imgPath {
+
+    height: 500px;
+    width: 1200x;
+}
+
+
+#izborSmjeraModel1 {
+    display: none;
+}
+
+#izborSmjeraModel2 {
+    display: none;
+}
