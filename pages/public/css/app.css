@@ -1,5 +1,6 @@
 .modelImg {
     height: 300px;
+    width: 1000px;
 }
 
 .chooseModel {   
@@ -17,7 +18,7 @@
 .imgPath {
 
     height: 500px;
-    width: 1200x;
+    width: 1000px;
 }
 
 
@@ -27,4 +28,12 @@
 
 #izborSmjeraModel2 {
     display: none;
+}
+
+
+.imgPathCalc {
+    height: 350px;
+    width: 1000px;
+    position: relative;
+    left: 50px;
 }

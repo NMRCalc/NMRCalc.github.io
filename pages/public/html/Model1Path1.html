@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <title>NMR-Rx-Calculator</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            
+                <h3 class="text-center">Model 1 Path 1 (input-> output)</h3>
+                <img src="../img/Path_Model_1.png" class="imgPathCalc" alt="">
+                
+                <div class="row justify-content-center mt-3">
+
+                    <div class="col-md-6">
+                        <form class="form-group">
+
+                            <label for="SNRin">SNR<sub>in</sub> - Input signal-to-noise ratio in dB:</label>
+                            <input type="number" class="form-control mb-3" id="SNRin" placeholder="10" >
+                            
+                            <label for="Tprobe">T<sub>probe</sub> - Coil temperature in K:</label>
+                            <input type="number" class="form-control mb-3" id="Tprobe" placeholder="10" min='0' max="10000000000000000000">
+                            
+                            <label for="L1">L<sub>1</sub> - Input cable loss in dB:</label>
+                            <input type="number" class="form-control mb-3" id="L1" placeholder="10" min='0' max="10000000000000000000">
+                            
+                            <label for="L2">L<sub>2</sub> - Duplexer loss in dB:</label>
+                            <input type="number" class="form-control mb-3" id="L2" placeholder="10" min='0' max="10000000000000000000">
+                            
+                            <label for="G3">G<sub>3</sub> - Pre-amplifier gain in dB:</label>
+                            <input type="number" class="form-control mb-3" id="G3" placeholder="10" min='0' max="10000000000000000000">
+
+                            
+
+                        </form>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <form class="form-group">
+
+                            <label for="F3">F<sub>3</sub> - Pre-amplifier noise factor in dB:</label>
+                            <input type="number" class="form-control mb-3" id="F3" placeholder="10" min='0' max="10000000000000000000">
+                            
+                            <label for="S11">S<sub>11<sub>3</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
+                            <input type="number" class="form-control mb-3" id="S11" placeholder="10" max="0">
+                            
+                            <label for="L4">L<sub>4</sub> - Output cable loss in dB:</label>
+                            <input type="number" class="form-control mb-3" id="L4" placeholder="10" min='0' max="10000000000000000000">
+                            
+                            <label for="F5">F<sub>5</sub> - NMR spectrometer RF receiver noise factor in dB:</label>
+                            <input type="number" class="form-control mb-3" id="F5" placeholder="10" min='0' max="10000000000000000000">
+                            
+                            <label for="Nmeas">N<sub>meas</sub> - Number of averaged measurments:</label>
+                            <input type="number" class="form-control mb-3" id="Nmeas" placeholder="10" min="1">
+
+                        </form>
+                        <button>Submit</button>
+                    </div>
+
+                    <div class="col-12 d-flex flex-row-reverse">
+                        <button href="" class="btn btn-success  m-2">Submit</button>
+                        <a href="" class="btn btn-danger m-2">Back</a>
+                    </div>
+
+                </div>
+
+            
+
+        </div>
+
+    </div>
+    
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
