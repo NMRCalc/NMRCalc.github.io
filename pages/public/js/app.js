@@ -30,5 +30,7 @@ backButtonCP[1].addEventListener("click", () => {
 pathModelBtn1.addEventListener('click', () => {
     if(document.querySelector("input[name='pathModel1']:checked").value === "1") {
         pathModelBtn1.setAttribute('href', 'public/html/Model1Path1.html')
+    } else {
+        pathModelBtn1.setAttribute('href', 'public/html/Model1Path2.html')
     }
 })
