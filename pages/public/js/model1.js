@@ -7,7 +7,8 @@ window.onload = function(){
             FdB         = document.querySelector("#FdB"),
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
-            form        = document.querySelector("form")
+            form        = document.querySelector("form"),
+            btnPath2    = document.querySelector("#model1path2btn")
 
 
     
@@ -20,13 +21,20 @@ window.onload = function(){
 
     //Racunanje
     submitBtn.addEventListener("click", function() {
-        outputCalc()
+      let mode = 1
+      outputCalc(mode)
+
+        
+    })
+    btnPath2.addEventListener("click", function() {
+      let mode = 2
+      outputCalc(mode)
 
         
     })
 
-    const outputCalc = function() {
-        let ans = nmrCalc.F1(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value, 1)
+    const outputCalc = function(mode) {
+        let ans = nmrCalc.F1(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value, mode)
         
         fhwl.textContent = ans[0].toFixed(4)
         fhwdB.textContent = nmrCalc.lin_2_dB(ans[0], 'power').toFixed(4)

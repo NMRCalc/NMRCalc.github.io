@@ -27,16 +27,17 @@ const nmrCalc = {
                 F3lin   = this.dB_2_lin(F3, 'power'),
                 S113lin = this.dB_2_lin(S113, 'voltage'),
                 L4lin   = this.dB_2_lin(L4, 'power'),
-                F5lin   = this.dB_2_lin(F5, 'power')
+                F5lin   = this.dB_2_lin(F5, 'power'),
+                SNRlin  = this.dB_2_lin(SNR, 'power')
 
         let FHW = 1 + ((2 * T0) / (Tcoil + T0)) * (L1lin * L2lin * (1 + (1 / (1 - Math.pow(S113lin, 2))) * (F3lin - 1 + ((L4lin * F5lin -1) /G3lin))) - 1)
         let F = FHW / nMeas
         
         if(mode === 1) {
-            let SNRout = this.dB_2_lin(SNR, 'power') / F
+            let SNRout = SNRlin / F
             return [FHW, F, SNRout]
         } else {
-            let SNRin = this.dB_2_lin(SNR, 'power') * F
+            let SNRin = SNRlin * F
             return [FHW, F, SNRin]
         }
 
