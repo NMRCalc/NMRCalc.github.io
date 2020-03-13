@@ -14,8 +14,8 @@
         <div class="row">
 
             
-                <h3 class="text-center">Model 1 Path 1 (input-> output)</h3>
-                <img src="../img/Path_Model_1.png" class="imgPathCalc" alt="">
+                <h3 class="text-center">Model 2 Path 1 (input-> output)</h3>
+                <img src="../img/Path_Model_2.png" class="imgPathCalc" alt="">
 
                 <!-- <div class="e">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, voluptatem.</p>
@@ -33,29 +33,39 @@
                                 <input type="number" class="form-control mb-3" id="Tprobe" placeholder="10" min="0" step="0.01">
                                 
                                 
-                                <label for="L1">L<sub>1</sub> - Input cable loss in dB:</label>
+                                <label for="L1" class="mt-4">L<sub>1</sub> - Input cable loss in dB:</label>
                                 <input type="number" class="form-control mb-3" id="L1" placeholder="0.28" min="0" step="0.01">
                                 
                                 
                             
-                                <label for="L2" class="mt-4">L<sub>2</sub> - Duplexer loss in dB:</label>
+                                <label for="L2" >L<sub>2</sub> - Duplexer loss in dB:</label>
                                 <input type="number" class="form-control mb-3" id="L2" placeholder="0.27" min="0" step="0.01">
                                 
 
-                                <label for="G3">G<sub>3</sub> - Pre-amplifier gain in dB:</label>
-                                <input type="number" class="form-control mb-3" id="G3" placeholder="36.13" min="0" step="0.01">
+                                <label for="G3a" class="mt-4">G<sub>3a</sub> - Pre-amplifier gain in dB:</label>
+                                <input type="number" class="form-control mb-3" id="G3a" placeholder="36.13" min="0" step="0.01">
+
+                                <label for="F3a">F<sub>3a</sub> - Pre-amplifier noise factor in dB:</label>
+                                <input type="number" class="form-control mb-3" id="F3a" placeholder="1.11" min="0" step="0.01">
+                                
+                                <label for="S11a">S<sub>11<sub>3a</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
+                                <input type="number" class="form-control mb-3" id="S11a" placeholder="-16.43"  max="0" oninput="check(this)" step="0.01">
                                 
                         </div>
                                 
                             
                         <div class="col-md-6">
-                            
 
-                                <label for="F3">F<sub>3</sub> - Pre-amplifier noise factor in dB:</label>
-                                <input type="number" class="form-control mb-3" id="F3" placeholder="1.11" min="0" step="0.01">
+                                <label for="G3b">G<sub>3b</sub> - Second stage amplifier gain in dB:</label>
+                                <input type="number" class="form-control mb-3" id="G3b" placeholder="36.13" min="0" step="0.01">
+
+                                <label for="F3b">F<sub>3b</sub> - Second stage amplifier noise factor in dB:</label>
+                                <input type="number" class="form-control mb-3" id="F3b" placeholder="1.11" min="0" step="0.01">
                                 
-                                <label for="S11">S<sub>11<sub>3</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
-                                <input type="number" class="form-control mb-3" id="S11" placeholder="-16.43"  max="0" oninput="check(this)" step="0.01">
+                                <label for="S11b">S<sub>11<sub>3b</sub></sub> - Second stage amplifier S<sub>11</sub> parameter in dB:</label>
+                                <input type="number" class="form-control mb-3" id="S11b" placeholder="-16.43"  max="0" oninput="check(this)" step="0.01">
+
+                                
                                 
                                 <label for="L4">L<sub>4</sub> - Output cable loss in dB:</label>
                                 <input type="number" class="form-control mb-3" id="L4" placeholder="0.46" min="0" step="0.01">
@@ -67,8 +77,8 @@
                                 <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="0" oninput="check(this)" step="0.01">
 
                        
-                                <button class="btn btn-success m-2">Submit</button>
-                                <a href="../../index.html" class="btn btn-danger">Back</a>
+                                <button class="btn btn-success model2btns">Submit</button>
+                                <a href="../../index.html" class="btn btn-danger model2btns">Back</a>
 
                             </div>    
                             
@@ -76,6 +86,8 @@
 
                     </form>
 
+
+                    <!-- RESULTS OUTPUT  -->
                     <div class="col-md-4 resultat">
                         <h4>Results:</h4>
         
@@ -107,7 +119,7 @@
         crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script  src="../js/model1.js"></script>
+    <script  src="../js/model2.js"></script>
     <script  src="../js/Calculation.js"></script>
     <script>
         function check(input) {

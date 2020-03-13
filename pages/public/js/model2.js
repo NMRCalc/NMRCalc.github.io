@@ -9,14 +9,14 @@ window.onload = function(){
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
             form        = document.querySelector("form"),
-            btnPath2    = document.querySelector("#model1path2btn")
+            btnPath2    = document.querySelector("#model2path2btn")
 
   
            //Check for errors in input data
            const validate = () => {
             
             for(var i = 0; i < inputs.length; i++) {
-              if(i !== 6) {
+              if(i !== 6 && i !== 9) {
                 if(inputs[i].value < 0) {
                   return false         
                   
@@ -38,7 +38,7 @@ window.onload = function(){
                 })
                 return false
               } else {
-                let ans = nmrCalc.F1(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value, mode)
+                let ans = nmrCalc.F2(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value, inputs[10].value, inputs[11].value, inputs[12].value ,mode)
               
                 fhwl.textContent = ans[0].toFixed(4)
                 fhwdB.textContent = nmrCalc.lin_2_dB(ans[0], 'power').toFixed(4)
@@ -74,12 +74,4 @@ window.onload = function(){
 
         
     })
-
-
-
-    
-
 }
-
-
-

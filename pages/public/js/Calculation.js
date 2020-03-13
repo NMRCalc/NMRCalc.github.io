@@ -39,9 +39,34 @@ const nmrCalc = {
         } else {
             let SNRin = SNRlin * F
             return [FHW, F, SNRin]
-        }
+        }        
+    },
 
+    F2: function(SNR, Tcoil, L1, L2, G3a, F3a, S11a, G3b, F3b, S11b, L4, F5, nMeas, mode) {
+        const T0 = 290 //Standard temp of 290 K
+        const   L1lin       = this.dB_2_lin(L1, 'power'),
+                L2lin       = this.dB_2_lin(L2, 'power'),
+                G3alin      = this.dB_2_lin(G3a, 'power'),
+                F3alin      = this.dB_2_lin(F3a, 'power'),
+                S11alin     = this.dB_2_lin(S11a, 'voltage'),
+                G3blin      = this.dB_2_lin(G3b, 'power'),
+                F3blin      = this.dB_2_lin(F3b, 'power'),
+                S11blin     = this.dB_2_lin(S11b, 'voltage'),
+                L4lin       = this.dB_2_lin(L4, 'power'),
+                F5lin       = this.dB_2_lin(F5, 'power'),
+                SNRlin      = this.dB_2_lin(SNR, 'power')
+
+        FHW = 1 + ((2 * T0) / (Tcoil + T0)) * (L1lin * L2lin * (1 + (1 / (1 - Math.pow(S11alin, 2))) * (F3alin - 1 + (1 / (G3alin * (1 - Math.pow(S11blin,2)))) * (F3blin - 1 + ((L4lin * F5lin -1) / G3blin)))) - 1)
         
+        F = FHW / nMeas
+
+        if(mode == 1) {
+            let SNRout = SNRlin / F
+            return [FHW, F, SNRout]
+        } else {
+            let SNRin = SNRlin * F
+            return [FHW, F, SNRin]
+        }
     }
     
 }
