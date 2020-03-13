@@ -38,16 +38,16 @@ window.onload = function(){
                 })
                 return false
               } else {
-                let ans = nmrCalc.F1(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value, mode)
+                let ans = F1(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), mode)
               
                 fhwl.textContent = ans[0].toFixed(4)
-                fhwdB.textContent = nmrCalc.lin_2_dB(ans[0], 'power').toFixed(4)
+                fhwdB.textContent = lin_2_dB(ans[0], 'power').toFixed(4)
               
                 Fl.textContent = ans[1].toFixed(4)
-                FdB.textContent = nmrCalc.lin_2_dB(ans[1], 'power').toFixed(4)
+                FdB.textContent = lin_2_dB(ans[1], 'power').toFixed(4)
       
                 SNRl.textContent = ans[2].toFixed(4)
-                SNRdB.textContent = nmrCalc.lin_2_dB(ans[2], 'power').toFixed(4)
+                SNRdB.textContent = lin_2_dB(ans[2], 'power').toFixed(4)
               }
               
           }
