@@ -38,7 +38,7 @@ window.onload = function(){
                 })
                 return false
               } else {
-                let ans = nmrCalc.F2(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value, inputs[5].value, inputs[6].value, inputs[7].value, inputs[8].value, inputs[9].value, inputs[10].value, inputs[11].value, inputs[12].value ,mode)
+                let ans = nmrCalc.F2(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), Number(inputs[10].value), Number(inputs[11].value), Number(inputs[12].value) ,mode)
               
                 fhwl.textContent = ans[0].toFixed(4)
                 fhwdB.textContent = nmrCalc.lin_2_dB(ans[0], 'power').toFixed(4)
