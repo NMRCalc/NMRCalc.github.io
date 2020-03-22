@@ -13,41 +13,42 @@ window.onload = function(){
 
   
            //Check for errors in input data
-           const validate = () => {
+const validate = () => {
             
-            for(var i = 0; i < inputs.length; i++) {
-              if(i !== 6 && i !== 9) {
-                if(inputs[i].value < 0) {
-                  return false         
-                  
-                }
-              } else {
-                if(inputs[i].value >= 0) {
-                  return false
-                }
-              }
-            }
-            return true
-          }
-
+  for(var i = 1; i < inputs.length; i++) {
+    if(i == 6  || i == 9) {
+      if(inputs[i].value > 0) {
+        console.log('fdsaf'  + inputs[i].value)
+        return false         
+        
+      }
+    } else {
+      if(inputs[i].value <= 0) {
+        return false
+      }
+    }
+  }
+  return true
+}
 
             const outputCalc = function(mode) {
-              if(validate() == false) {
+              if(validate() === false) {
                 spans.forEach(span => {
                   span.textContent = 'NaN'
                 })
-                return false
+                
               } else {
-                let ans = nmrCalc.F2(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), Number(inputs[10].value), Number(inputs[11].value), Number(inputs[12].value) ,mode)
-              
+                let ans = F2(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), Number(inputs[10].value), Number(inputs[11].value), Number(inputs[12].value) ,mode)
+                
+                console.log(ans)
                 fhwl.textContent = ans[0].toFixed(4)
-                fhwdB.textContent = nmrCalc.lin_2_dB(ans[0], 'power').toFixed(4)
+                fhwdB.textContent = lin_2_dB(ans[0], 'power').toFixed(4)
               
                 Fl.textContent = ans[1].toFixed(4)
-                FdB.textContent = nmrCalc.lin_2_dB(ans[1], 'power').toFixed(4)
+                FdB.textContent = lin_2_dB(ans[1], 'power').toFixed(4)
       
                 SNRl.textContent = ans[2].toFixed(4)
-                SNRdB.textContent = nmrCalc.lin_2_dB(ans[2], 'power').toFixed(4)
+                SNRdB.textContent = lin_2_dB(ans[2], 'power').toFixed(4)
               }
               
           }

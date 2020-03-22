@@ -15,9 +15,10 @@ window.onload = function(){
            //Check for errors in input data
            const validate = () => {
             
-            for(var i = 0; i < inputs.length; i++) {
+            for(var i = 1; i < inputs.length; i++) {
               if(i !== 6) {
                 if(inputs[i].value < 0) {
+                  
                   return false         
                   
                 }
