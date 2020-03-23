@@ -15,7 +15,7 @@
 
             
                 <h3 class="text-center">Model 2 Path 1 (input-> output)</h3>
-                <img src="../img/Path_Model_2.png" class="imgPathCalc" alt="">
+                <img src="../img/Path_1_Model_2.png" class="imgPathCalc" alt="">
 
                 <!-- <div class="e">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, voluptatem.</p>
@@ -74,7 +74,7 @@
                                 <input type="number" class="form-control mb-3" id="F5" placeholder="33.50" min="0" step="0.01"> 
                                 
                                 <label for="Nmeas">N<sub>meas</sub> - Number of averaged measurments:</label>
-                                <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="1"  step="1">
+                                <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="1" oninput="check(this)" step="1">
 
                        
                                 <button class="btn btn-success model2btns">Submit</button>
@@ -119,18 +119,17 @@
         crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script  src="../js/model2.js"></script>
+    <script  src="../js/model2path1.js"></script>
     <script  src="../js/Calculation.js"></script>
-    <!-- <script>
+    <script>
         function check(input) {
-          if (input.value == 0) {
-            input.setCustomValidity('The number must not be zero.');
+            if (Number.isInteger(Number(input.value))) {
+            input.setCustomValidity('');
           } else {
             // input is fine -- reset the error message
-            input.setCustomValidity('');
+            input.setCustomValidity('The number must be integer!');
           }
         }
        </script>
-     -->
 </body>
 </html>

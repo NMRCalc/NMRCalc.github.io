@@ -8,8 +8,8 @@ window.onload = function(){
             FdB         = document.querySelector("#FdB"),
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
-            form        = document.querySelector("form"),
-            submitBtnP2 = document.querySelector("#submitBtnP2M1")
+            form        = document.querySelector("form")
+
 
     
 
@@ -17,27 +17,18 @@ window.onload = function(){
            //Check for errors in input data
            const validate = function(mode) {
             console.log('mode 2 = ' + mode)
-            if(mode == 1){
-              indexS11 = 6
-              indexNmeas = 9
-              from = 2
-              to = inputs.length 
-            } else {
-              indexS11 = 5
-              indexNmeas = 8
-              indexFrom = 0
-              indexTo = inputs.length - 1
-            }
+
+
             
-            for(let i = indexFrom; i < indexTo; i++) {
+            for(let i = 1; i < inputs.length ; i++) {
               console.log(i)
-              if(i == indexS11) {
+              if(i == 6) {
                 if(inputs[i].value > 0) {
                   console.log('Prvi: ' + inputs[i].value)
                   return false         
                   
                 }
-              } else if (i == indexNmeas) {
+              } else if (i == 9) {
                 if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0) {
                   console.log('integer')
                   return false
@@ -59,13 +50,9 @@ window.onload = function(){
                 spans.forEach(span => {
                   span.textContent = 'NaN'
                 })
-                
               } else {
-                if(mode == 1) {
                   ans = F1(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), mode)
-                } else {
-                  ans = F1(Number(inputs[9].value), Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), mode)
-                }
+
                 
               
                 fhwl.textContent = ans[0].toFixed(4)
@@ -99,10 +86,6 @@ window.onload = function(){
         
     })
 
-    submitBtnP2.addEventListener("click", function() {
-      mode = 2;
-      outputCalc(mode); 
-    })
     
 
 

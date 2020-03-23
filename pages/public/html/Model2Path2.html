@@ -15,7 +15,7 @@
 
             
                 <h3 class="text-center">Model 2 Path 1 (input-> output)</h3>
-                <img src="../img/Path_Model_2.png" class="imgPathCalc" alt="">
+                <img src="../img/Path_2_Model_2.png" class="imgPathCalc" alt="">
 
                 <!-- <div class="e">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, voluptatem.</p>
@@ -26,8 +26,7 @@
                         <div class="col-md-6">
                             
 
-                                <label for="SNRout">SNR<sub>out</sub> - Output signal-to-noise ratio in dB:</label>
-                                <input type="number" class="form-control mb-3" id="SNRout" placeholder="12.17" step="0.01">
+
                                 
                                 <label for="Tprobe">T<sub>probe</sub> - Coil temperature in K:</label>
                                 <input type="number" class="form-control mb-3" id="Tprobe" placeholder="10" min="0" step="0.01">
@@ -49,14 +48,14 @@
                                 
                                 <label for="S11a">S<sub>11<sub>3a</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
                                 <input type="number" class="form-control mb-3" id="S11a" placeholder="-16.43"  max="0" step="0.01">
+
+                                <label for="G3b">G<sub>3b</sub> - Second stage amplifier gain in dB:</label>
+                                <input type="number" class="form-control mb-3" id="G3b" placeholder="36.13" min="0" step="0.01">
                                 
                         </div>
                                 
                             
                         <div class="col-md-6">
-
-                                <label for="G3b">G<sub>3b</sub> - Second stage amplifier gain in dB:</label>
-                                <input type="number" class="form-control mb-3" id="G3b" placeholder="36.13" min="0" step="0.01">
 
                                 <label for="F3b">F<sub>3b</sub> - Second stage amplifier noise factor in dB:</label>
                                 <input type="number" class="form-control mb-3" id="F3b" placeholder="1.11" min="0" step="0.01">
@@ -73,7 +72,10 @@
                                 <input type="number" class="form-control mb-3" id="F5" placeholder="33.50" min="0" step="0.01"> 
                                 
                                 <label for="Nmeas">N<sub>meas</sub> - Number of averaged measurments:</label>
-                                <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="1" step="1">
+                                <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="1" oninput="check(this)" step="1">
+
+                                <label for="SNRout">SNR<sub>out</sub> - Output signal-to-noise ratio in dB:</label>
+                                <input type="number" class="form-control mb-3" id="SNRout" placeholder="12.17" step="0.01">
 
                        
                                 <button class="btn btn-success model2btns" id="model2path2btn">Submit</button>
@@ -118,15 +120,15 @@
         crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script  src="../js/model2.js"></script>
+    <script  src="../js/model2path2.js"></script>
     <script  src="../js/Calculation.js"></script>
     <script>
         function check(input) {
-          if (input.value == 0) {
-            input.setCustomValidity('The number must not be zero.');
+            if (Number.isInteger(Number(input.value))) {
+            input.setCustomValidity('');
           } else {
             // input is fine -- reset the error message
-            input.setCustomValidity('');
+            input.setCustomValidity('The number must be integer!');
           }
         }
        </script>

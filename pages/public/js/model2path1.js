@@ -8,43 +8,25 @@ window.onload = function(){
             FdB         = document.querySelector("#FdB"),
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
-            form        = document.querySelector("form"),
-            btnPath2    = document.querySelector("#model2path2btn")
+            form        = document.querySelector("form")
     
 
   var mode;
            //Check for errors in input data
   const validate = (mode) => {
 
-    let indexS11;
-    let indexS112;
-    let indexNmeas;
-    let from;
-    let to;
-    if(mode == 1){
-      indexS11 = 6
-      indexS112 = 9
-      indexNmeas = 12
-      from = 0
-      to = inputs.length
-    } else {
-      indexS11 = 5
-      indexS112 = 8
-      indexNmeas = 11
-      from = 1
-      to = inputs.length - 1
-    }
-              
-    for(var i = from; i < to; i++) {
-      if(i == indexS11  || i == indexS112) {
+
+     
+    for(var i = 1; i < inputs.length; i++) {
+      if(i == 6  || i == 9) {
         if(inputs[i].value > 0) {
-          console.log('fdsaf'  + inputs[i].value)
+          
           return false         
           
         }
-      } else if (i == indexNmeas) {
+      } else if (i == 12) {
         if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0) {
-          console.log('integer')
+          
           return false
         }
 
@@ -65,11 +47,9 @@ window.onload = function(){
                 
               } else {
 
-                if(mode === 1) {
-                  ans = F2(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), Number(inputs[10].value), Number(inputs[11].value), Number(inputs[12].value) ,mode)
-                } else {
-                  ans = F2(Number(inputs[12].value), Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), Number(inputs[10].value), Number(inputs[11].value) ,mode)
-                }
+                
+                ans = F2(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), Number(inputs[10].value), Number(inputs[11].value), Number(inputs[12].value) ,mode)
+
                 
                 
                 console.log(ans)
@@ -101,10 +81,5 @@ window.onload = function(){
 
         
     })
-    btnPath2.addEventListener("click", function() {
-      mode = 2
-      outputCalc(mode)
 
-        
-    })
 }

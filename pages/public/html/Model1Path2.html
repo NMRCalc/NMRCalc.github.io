@@ -15,7 +15,7 @@
 
             
                 <h3 class="text-center">Model 1 Path 2 (output -> input)</h3>
-                <img src="../img/Path_Model_1.png" class="imgPathCalc" alt="">
+                <img src="../img/Path_2_Model_1.png" class="imgPathCalc" alt="">
 
                 
                 
@@ -23,9 +23,6 @@
                     <form class="form-row" method="" action="">
                         <div class="col-md-6">
                             
-
-                                <label for="SNRout">SNR<sub>out</sub> - Output signal-to-noise ratio in dB:</label>
-                                <input type="number" class="form-control mb-3" id="SNRin" placeholder="12.17" step="0.01">
                                 
                                 <label for="Tprobe">T<sub>probe</sub> - Coil temperature in K:</label>
                                 <input type="number" class="form-control mb-3" id="Tprobe" placeholder="10" min="0" step="0.01">
@@ -42,6 +39,9 @@
 
                                 <label for="G3">G<sub>3</sub> - Pre-amplifier gain in dB:</label>
                                 <input type="number" class="form-control mb-3" id="G3" placeholder="36.13" min="0" step="0.01">
+
+                                <label for="F3">F<sub>3</sub> - Pre-amplifier noise factor in dB:</label>
+                                <input type="number" class="form-control mb-3" id="F3" placeholder="1.11" min="0" step="0.01">
                                 
                         </div>
                                 
@@ -49,8 +49,7 @@
                         <div class="col-md-6">
                             
 
-                                <label for="F3">F<sub>3</sub> - Pre-amplifier noise factor in dB:</label>
-                                <input type="number" class="form-control mb-3" id="F3" placeholder="1.11" min="0" step="0.01">
+
                                 
                                 <label for="S11">S<sub>11<sub>3</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
                                 <input type="number" class="form-control mb-3" id="S11" placeholder="-16.43"  max="0"  step="0.01">
@@ -62,10 +61,13 @@
                                 <input type="number" class="form-control mb-3" id="F5" placeholder="33.50" min="0" step="0.01"> 
                                 
                                 <label for="Nmeas">N<sub>meas</sub> - Number of averaged measurments:</label>
-                                <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="1"  step="1">
+                                <input type="number" class="form-control mb-3" id="Nmeas" placeholder="200" min="1" oninput="check(this)" step="1">
+
+                                <label for="SNRout">SNR<sub>out</sub> - Output signal-to-noise ratio in dB:</label>
+                                <input type="number" class="form-control mb-3" id="SNRin" placeholder="12.17" step="0.01">
 
                                
-                                <button class="btn btn-success m-2" id="model1path2btn">Submit</button>
+                                <button class="btn btn-success m-2" id="submitBtnP2M1">Submit</button>
                                 <a href="../../index.html" class="btn btn-danger">Back</a>
 
                             </div>    
@@ -105,15 +107,16 @@
         crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script  src="../js/model1.js"></script>
+    <script  src="../js/model1path2.js"></script>
     <script  src="../js/Calculation.js"></script>
+    
     <script>
         function check(input) {
-          if (input.value == 0) {
-            input.setCustomValidity('The number must not be zero.');
+          if (Number.isInteger(Number(input.value))) {
+            input.setCustomValidity('');
           } else {
             // input is fine -- reset the error message
-            input.setCustomValidity('');
+            input.setCustomValidity('The number must be integer!');
           }
         }
        </script>
