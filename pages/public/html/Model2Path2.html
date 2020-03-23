@@ -47,7 +47,7 @@
                                 <input type="number" class="form-control mb-3" id="F3a" placeholder="1.11" min="0" step="0.01">
                                 
                                 <label for="S11a">S<sub>11<sub>3a</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
-                                <input type="number" class="form-control mb-3" id="S11a" placeholder="-16.43"  max="0" step="0.01">
+                                <input type="number" class="form-control mb-3" id="S11a" placeholder="-16.43"  max="0" oninput="isZero(this)" step="0.01">
 
                                 <label for="G3b">G<sub>3b</sub> - Second stage amplifier gain in dB:</label>
                                 <input type="number" class="form-control mb-3" id="G3b" placeholder="36.13" min="0" step="0.01">
@@ -61,7 +61,7 @@
                                 <input type="number" class="form-control mb-3" id="F3b" placeholder="1.11" min="0" step="0.01">
                                 
                                 <label for="S11b">S<sub>11<sub>3b</sub></sub> - Second stage amplifier S<sub>11</sub> parameter in dB:</label>
-                                <input type="number" class="form-control mb-3" id="S11b" placeholder="-16.43"  max="0"  step="0.01">
+                                <input type="number" class="form-control mb-3" id="S11b" placeholder="-16.43"  max="0" oninput="isZero(this)" step="0.01">
 
                                 
                                 
@@ -128,7 +128,17 @@
             input.setCustomValidity('');
           } else {
             // input is fine -- reset the error message
-            input.setCustomValidity('The number must be integer!');
+            input.setCustomValidity('The number must be a positive integer!');
+          }
+        }
+       </script>
+    <script>
+        function isZero(input) {
+            if (Number(input.value) == 0) {
+            input.setCustomValidity('The value must be less than 0!');
+          } else {
+            // input is fine -- reset the error message
+            input.setCustomValidity('');
           }
         }
        </script>

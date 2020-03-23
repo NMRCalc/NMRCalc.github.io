@@ -52,7 +52,7 @@
 
                                 
                                 <label for="S11">S<sub>11<sub>3</sub></sub> - Pre-amplifier S<sub>11</sub> parameter in dB:</label>
-                                <input type="number" class="form-control mb-3" id="S11" placeholder="-16.43"  max="0"  step="0.01">
+                                <input type="number" class="form-control mb-3" id="S11" placeholder="-16.43"  max="0" oninput="isZero(this)" step="0.01">
                                 
                                 <label for="L4">L<sub>4</sub> - Output cable loss in dB:</label>
                                 <input type="number" class="form-control mb-3" id="L4" placeholder="0.46" min="0" step="0.01">
@@ -116,10 +116,20 @@
             input.setCustomValidity('');
           } else {
             // input is fine -- reset the error message
-            input.setCustomValidity('The number must be integer!');
+            input.setCustomValidity('The number must be a positive integer!');
           }
         }
-       </script>
+    </script>
+       <script>
+        function isZero(input) {
+            if (Number(input.value) == 0) {
+            input.setCustomValidity('The value must be less than 0!');
+          } else {
+            // input is fine -- reset the error message
+            input.setCustomValidity('');
+          }
+        }
+    </script>
     
 </body>
 </html>

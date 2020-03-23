@@ -8,7 +8,7 @@ window.onload = function(){
             FdB         = document.querySelector("#FdB"),
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
-            form        = document.querySelector("form")
+            form        = document.querySelector("form"),
 
 
     
@@ -18,7 +18,9 @@ window.onload = function(){
            const validate = function(mode) {
             console.log('mode 2 = ' + mode)
 
-
+            if(inputs[0].value === '') {
+                return false
+            }
             
             for(let i = 1; i < inputs.length ; i++) {
               console.log(i)
@@ -34,7 +36,7 @@ window.onload = function(){
                   return false
                 }
               } else {
-                if(inputs[i].value <= 0) {
+                if(inputs[i].value < 0) {
                   console.log('Drugi: ' + inputs[i].value)
                   return false
                 }
