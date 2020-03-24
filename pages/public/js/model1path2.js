@@ -15,28 +15,25 @@ window.onload = function(){
   
            //Check for errors in input data
            const validate = function(mode) {
-            console.log('mode 2 = ' + mode)
-           
-            if(inputs[9].value === '') {
-                return false
-            }
+            
+
             
             for(let i = 0; i < inputs.length - 1; i++) {
               
               if(i == 5) {
-                if(inputs[i].value >= 0) {
+                if(inputs[i].value >= 0 || inputs[i].value === '') {
                   
                   return false         
                   
                 }
             
-              } else if (i == 8) {
+              } else if (i == 8 || inputs[i].value === '') {
                 if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0) {
                   
                   return false
                 }
               } else {
-                if(inputs[i].value < 0) {
+                if(inputs[i].value < 0 || inputs[i].value === '') {
                   
                   return false
                 }

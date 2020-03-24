@@ -15,26 +15,24 @@ window.onload = function(){
     //Check for errors in input data
   const validate = (mode) => {
 
-    if(inputs[12].value === '') {
-        return false
-    }
+   
               
     for(var i = 0; i < inputs.length - 1; i++) {
         if(i == 5  || i == 8) {
-            if(inputs[i].value >= 0) {
+            if(inputs[i].value >= 0 || inputs[i].value === '') {
             console.log('fdsaf'  + inputs[i].value)
             return false         
             
             }
         
         } else if (i == 11) {
-            if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0) {
+            if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0 || inputs[i].value === '') {
             console.log('integer')
             return false
             }
  
         } else {
-            if(inputs[i].value < 0) {
+            if(inputs[i].value < 0 || inputs[i].value === '') {
             return false
             }
         }

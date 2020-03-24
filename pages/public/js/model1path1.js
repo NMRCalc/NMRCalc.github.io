@@ -8,7 +8,7 @@ window.onload = function(){
             FdB         = document.querySelector("#FdB"),
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
-            form        = document.querySelector("form"),
+            form        = document.querySelector("form")
 
 
     
@@ -16,28 +16,26 @@ window.onload = function(){
   
            //Check for errors in input data
            const validate = function(mode) {
-            console.log('mode 2 = ' + mode)
+            
 
-            if(inputs[0].value === '') {
-                return false
-            }
+
             
             for(let i = 1; i < inputs.length ; i++) {
-              console.log(i)
+              
               if(i == 6) {
-                if(inputs[i].value > 0) {
-                  console.log('Prvi: ' + inputs[i].value)
+                if(inputs[i].value > 0 || inputs[i].value === '') {
+                  
                   return false         
                   
                 }
               } else if (i == 9) {
-                if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0) {
-                  console.log('integer')
+                if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0 || inputs[i].value === '') {
+                 
                   return false
                 }
               } else {
-                if(inputs[i].value < 0) {
-                  console.log('Drugi: ' + inputs[i].value)
+                if(inputs[i].value < 0 || inputs[i].value === '') {
+                  
                   return false
                 }
               }
@@ -47,7 +45,7 @@ window.onload = function(){
 
           // CALCULATE OUTPUT AND PRINT IT OUT
             const outputCalc = function(mode) {
-              console.log('mode = ' + mode)
+              
               if(validate(mode) == false) {
                 spans.forEach(span => {
                   span.textContent = 'NaN'

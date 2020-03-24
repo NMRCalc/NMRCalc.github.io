@@ -16,26 +16,24 @@ window.onload = function(){
   const validate = (mode) => {
     
     
-    if(inputs[0].value === '') {
-        return false
-    }
+
      
     for(var i = 1; i < inputs.length; i++) {
       if(i == 6  || i == 9) {
-        if(inputs[i].value >= 0) {
+        if(inputs[i].value >= 0 || inputs[i].value === '') {
           
           return false         
           
         }
       } else if (i == 12) {
-        if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0) {
+        if(Number.isInteger(Number(inputs[i].value)) == false || Number(inputs[i].value) <= 0 || inputs[i].value === '') {
           
           return false
         }
         
 
       } else {
-        if(inputs[i].value < 0) {
+        if(inputs[i].value < 0 || inputs[i].value === '') {
           return false
         }
       }
