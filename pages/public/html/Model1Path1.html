@@ -121,16 +121,20 @@
           }
         }
     </script>
-    <script>
+      <script>
         function isZero(input) {
+          if(input.value.length != 0) {
             if (Number(input.value) == 0) {
-            input.setCustomValidity('The value must be less than 0!');
+              input.setCustomValidity('The value must be less than 0!');
+            } else {
+              // input is fine -- reset the error message
+              input.setCustomValidity('');
+            }
           } else {
-            // input is fine -- reset the error message
-            input.setCustomValidity('');
+            input.setCustomValidity('Please enter a number.');
           }
         }
-    </script>
+      </script>
     
 </body>
 </html>
