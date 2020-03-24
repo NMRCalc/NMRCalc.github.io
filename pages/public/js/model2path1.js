@@ -15,7 +15,9 @@ window.onload = function(){
            //Check for errors in input data
   const validate = (mode) => {
     
-    
+    if(inputs[0].value == '') {
+      return false
+    }
 
      
     for(var i = 1; i < inputs.length; i++) {
