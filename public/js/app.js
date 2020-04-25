@@ -32,17 +32,17 @@ backButtonCP[1].addEventListener("click", () => {
 //Choose what Path is picked up and render that path
 pathModelBtn1.addEventListener('click', () => {
     if(document.querySelector("input[name='pathModel1']:checked").value === "1") {
-        pathModelBtn1.setAttribute('href', 'public/html/Model1Path1.html')
+        pathModelBtn1.setAttribute('href', 'Model1Path1.html')
     } else {
-        pathModelBtn1.setAttribute('href', 'public/html/Model1Path2.html')
+        pathModelBtn1.setAttribute('href', 'Model1Path2.html')
     }
 })
 
 //Choose what Path is picked up and render that path
 pathModelBtn2.addEventListener("click", () => {
     if(document.querySelector("input[name='pathModel2']:checked").value == "1") {
-        pathModelBtn2.setAttribute('href', 'public/html/Model2Path1.html')
+        pathModelBtn2.setAttribute('href', 'Model2Path1.html')
     } else {
-        pathModelBtn2.setAttribute('href', 'public/html/Model2Path2.html')
+        pathModelBtn2.setAttribute('href', 'Model2Path2.html')
     }
 })
