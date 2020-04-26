@@ -1,6 +1,6 @@
 #content {
     display: table;
-    margin: auto;
+    margin:  auto;
 }
 
 #about {
@@ -13,6 +13,18 @@
     margin: 0 auto;
 }
 
+@media only screen and (min-width: 1200px) {
+    img {
+        height: 480px;
+        width: 480px;
+        margin: auto;
+    }
+}
 
-
-
+@media only screen and (min-width: 1600px) {
+    img {
+        height: 660px;
+        width: 660px;
+        margin: auto;
+    }
+}
