@@ -13,6 +13,16 @@
     margin: 0 auto;
 }
 
+@media only screen and (min-height: 500px) {
+    #content {
+        margin-top: 2rem !important;
+    }
+    img {
+        height: 400px;
+        width: 400px;
+    }
+}
+
 @media only screen and (min-height: 600px) {
     img {
         height: 480px;
@@ -28,3 +38,4 @@
         margin: auto;
     }
 }
+
