@@ -13,7 +13,7 @@
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-height: 600px) {
     img {
         height: 480px;
         width: 480px;
@@ -21,7 +21,7 @@
     }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-height: 800px) {
     img {
         height: 660px;
         width: 660px;
