@@ -60,5 +60,10 @@
 }
 
 input::placeholder {
-    color: #a5b895 !important;
+    color: #8f9e82 !important;
+}
+
+
+input {
+    color: black !important;
 }
