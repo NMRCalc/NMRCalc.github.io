@@ -50,7 +50,8 @@ window.onload = function(){
                 spans.forEach(span => {
                   span.textContent = 'NaN'
                 })
-                
+                res1.style.display = "none"
+                res2.style.display = "none"               
               } else {
 
                 

@@ -51,6 +51,8 @@ window.onload = function(){
                 spans.forEach(span => {
                   span.textContent = 'NaN'
                 })
+                res1.style.display = "none"
+                res2.style.display = "none"
               } else {
                   ans = F1(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), mode)
 
