@@ -54,7 +54,8 @@ window.onload = function(){
               } else {
                   ans = F1(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value), Number(inputs[5].value), Number(inputs[6].value), Number(inputs[7].value), Number(inputs[8].value), Number(inputs[9].value), mode)
 
-                
+                res1.style.display = "none"
+                res2.style.display = "none"
               
                 fhwl.textContent = ans[0].toFixed(4)
                 fhwdB.textContent = lin_2_dB(ans[0], 'power').toFixed(4)
