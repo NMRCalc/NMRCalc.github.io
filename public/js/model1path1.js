@@ -71,6 +71,7 @@ window.onload = function(){
                 if(lin_2_dB(ans[2], 'power') >= 9.12) {
                   res1.style.display = "block"
                 } else {
+                  res2.textContent = 'NOT'
                   res2.style.display = "block"
                 }
           }
