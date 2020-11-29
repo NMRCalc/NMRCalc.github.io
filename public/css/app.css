@@ -41,7 +41,7 @@
 .resultat {
     padding-top: 20px;
     border-radius: 2%;
-    height: 400px;
+    height: 425px;
     border: 1px solid black;
     background: lightgrey;
 }
@@ -66,4 +66,15 @@ input::placeholder {
 
 input {
     color: black !important;
+}
+
+.red {
+    color: red;
+}
+
+#res1 {
+    display: none;
+}
+#res2 {
+    display: none;
 }

@@ -8,7 +8,9 @@ window.onload = function(){
             FdB         = document.querySelector("#FdB"),
             SNRl        = document.querySelector("#SNRl"),
             SNRdB       = document.querySelector("#SNRdB"),
-            form        = document.querySelector("form")
+            form        = document.querySelector("form"),
+            res1        = document.querySelector("#res1"),
+            res2        = document.querySelector("#res2")
     
 
   var mode;
@@ -65,6 +67,12 @@ window.onload = function(){
       
                 SNRl.textContent = ans[2].toFixed(4)
                 SNRdB.textContent = lin_2_dB(ans[2], 'power').toFixed(4)
+
+                if(lin_2_dB(ans[2], 'power') >= 9.12) {
+                  res1.style.display = "block"
+                } else {
+                  res2.style.display = "block"
+                }
               }
               
           }
