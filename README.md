@@ -27,3 +27,12 @@ License
 -------
 
 NMRCalc is distributed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
+
+
+
+Contributors
+------------
+
+* [github/lblazok](https://github.com/lblazok)
+* [github/5ARK](https://github.com/5ARK)
+* [github/NMRCalc](https://github.com/NMRCalc)
