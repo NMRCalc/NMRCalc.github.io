@@ -13,3 +13,17 @@ The video tutorial on how to use NMRCalc is available on the YouTube channel of 
 This channel serves as the nuts and bolts collection concerning NMRCalc, including tutorials and howto's.
 
 The channel is available here: https://www.youtube.com/channel/UCxmr6qfK3Yq-3RveHQRJBKg
+
+
+
+Contact
+-------
+
+To report issues, use GitHub Issues. For other queries, contact NMRCalc Support <nmrcalc@gmail.com>
+
+
+
+License
+-------
+
+NMRCalc is distributed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
