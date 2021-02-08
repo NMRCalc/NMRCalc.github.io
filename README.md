@@ -12,7 +12,7 @@ The video tutorial on how to use NMRCalc is available on the YouTube channel of 
 
 This channel serves as the nuts and bolts collection concerning NMRCalc, including tutorials and howto's.
 
-The channel is available here: https://www.youtube.com/channel/UCxmr6qfK3Yq-3RveHQRJBKg
+The channel is available [here](https://www.youtube.com/channel/UCxmr6qfK3Yq-3RveHQRJBKg).
 
 
 
