@@ -1,6 +1,6 @@
 # About NMRCalc:
 
-NMRCalc is a simple calculator whose purpose is to calculate noise properties of the most sensitive part of the Nuclear Magnetic Resonance (NMR) spectroscopy system from the aspect of noise – its receiving (or probe-spectrometer) chain.
+NMRCalc is a simple calculator whose purpose is to calculate noise properties of the most sensitive part of the Nuclear Magnetic Resonance (NMR) spectroscopy system from the aspect of noise – its receiving (or probe-to-spectrometer) chain.
 
 The purpose of this calculator is to predict measurement results of a wanted NMR sample, and with measurement setup parameters of the user's NMR laboratory. Instead of performing an exhausting amount of measurements with different measurement setups, until optimal measurement setup is determined, and then actually measuring the wanted NMR sample (nowadays, very often, this consumes unenviable amounts of time), one can use this calculator to theoretically predict the optimal measurement setup parameters, as well as the NMR measurements results (this consumes only a few minutes of your time).
 
