@@ -19,7 +19,7 @@ The channel is available [here](https://www.youtube.com/channel/UCxmr6qfK3Yq-3Rv
 Contact
 -------
 
-To report issues, use GitHub Issues. For other queries, contact NMRCalc Support <nmrcalc@gmail.com>
+To report issues, use GitHub Issues. For other queries, contact NMRCalc Support: <nmrcalc@gmail.com>
 
 
 
